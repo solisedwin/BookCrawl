@@ -1,0 +1,16 @@
+Strict-Transport-Security: max-age=86400
+X-Content-Type-Options: nosniff
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' http://www.cisco.com/ data:;
+Set-Cookie: APPSESSIONID=1D778B2FA971E72C5E7F4C60384ABD28; Path=/portal; Secure; HttpOnly
+Set-Cookie: portalSessionId=010802dc-ad5d-46ff-a75e-0e132102a53e; Secure; HttpOnly
+Expires: -1
+Server: server
+Token: OOWWU9UINMPR23X1ROL3QPYD9GF1NO6A
+X-Xss-Protection: 1; mode=block
+Pragma: no-cache
+Cache-Control: no-cache, no-store, must-revalidate, max-age=0, proxy-revalidate, no-transform, pre-check=0, post-check=0, private
+Date: Wed, 09 Jan 2019 02:14:48 GMT
+X-Frame-Options: SAMEORIGIN
+X-Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' http://www.cisco.com/ data:;
+Content-Type: text/html;charset=UTF-8
+X-Webkit-Csp: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' http://www.cisco.com/ data:;

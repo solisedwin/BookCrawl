@@ -1,0 +1,16 @@
+X-Xss-Protection: 1;
+X-Cache: Miss from cloudfront
+X-Content-Type-Options: nosniff
+Content-Encoding: gzip
+Set-Cookie: session-token=45HOEpyLNk1eMoNlF30mhJ9WdL64M0v9mXZQIu4HCNXKKqLi7Qqm1LpIFE7FprKcQOxpmKpmq6Z8VxnAIK6LUMFew1sSFpBAnWgBkxchxTDLLINVXYVBZ6Gl0EMGuu+MI6n8aRKokUGOwsrBRfnobvohyoyl7IZ3GM1qmysUmXLnwUklO/QMgnohpkoTIyBG; Domain=.amazon.com; Expires=Tue, 01-Jan-2036 08:00:01 GMT; Path=/
+Strict-Transport-Security: max-age=47474747; includeSubDomains; preload
+Vary: Accept-Encoding,User-Agent
+Server: Server
+X-Amz-Rid: Y959NVBBQVJ63KY13EX4
+Via: 1.1 accd17b9e81974748fb925f0caaec427.cloudfront.net (CloudFront)
+X-Amz-Cf-Id: ulUsamn8L4hzOex9MQwa2GD9BomV5QI-SpF9AzithOEQtrinX9UsSA==
+Cache-Control: no-cache, no-transform
+Date: Sun, 13 Jan 2019 02:22:24 GMT
+P3P: policyref="https://www.amazon.com/w3c/p3p.xml",CP="CAO DSP LAW CUR ADM IVAo IVDo CONo OTPo OUR DELi PUBi OTRi BUS PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA HEA PRE LOC GOV OTC "
+Content-Type: text/html;charset=UTF-8
+X-Frame-Options: SAMEORIGIN

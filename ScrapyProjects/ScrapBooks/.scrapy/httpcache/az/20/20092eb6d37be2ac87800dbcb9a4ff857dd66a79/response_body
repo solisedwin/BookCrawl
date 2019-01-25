@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Sign On</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="initial-scale=1,user-scalable=yes" />
+        <meta http-equiv="X-UA-Compatible" content="IE=8, IE=9, IE=10" >
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="icon" type="image/x-icon" href="/portal/portals/9750ba60-e576-11e5-b460-58ac785c7dd2/images/favicon.ico" />
+        <link rel="apple-touch-icon" href="/portal/portals/9750ba60-e576-11e5-b460-58ac785c7dd2/images/apple-icon.png"/>
+        <link rel="stylesheet" href="/portal//css/guest.structure.css" />
+        <link rel="stylesheet" href="/portal/css/guest.theme.1.css" />
+        <style>
+            .cisco-ise-header.ui-header {
+                background-image: url("/portal/portals/9750ba60-e576-11e5-b460-58ac785c7dd2/images/defaultDeletedImage.png") !important;
+            }
+        </style>
+        <style>
+    .ui-header {
+        
+            color: #FDC82F !important;
+        
+            	background-color: #003591 !important;
+        	
+    }
+    
+    .ui-page, .ui-content.ui-body-a, .ui-panel-content-wrap.ui-body-a {
+       
+            background-color: #D6D6D6 !important;
+            
+            background-image: none !important;
+        	
+    }
+
+    .ui-page, .ui-body-a {
+        
+            color: #212121 !important;
+        
+    }
+</style><script src="/portal//js/guest.app.js"></script>
+    </head>
+    <body class="cisco-ise-desktop">
+        <div data-role="page" data-theme="a" id="page-login"
+             style=""
+             class="device-location-all-locations">
+
+            <div data-role="header" data-theme="a" class="cisco-ise-header ui-header ui-bar-a">
+                <div class="cisco-ise-banner">
+                    <img src="/portal/portals/9750ba60-e576-11e5-b460-58ac785c7dd2/images/TEMP_aff2187c0bc049f293dfaee08249cb86H-logo.png" id="ui_desktop_logo" class="cisco-ise cisco-ise-logo-image" alt=""/>
+<img src="/portal/portals/9750ba60-e576-11e5-b460-58ac785c7dd2/images/TEMP_6dd6f2790f284c29bb377dfe8c15526fH-logo.png" id="ui_mobile_logo" class="cisco-ise cisco-ise-logo-image" alt=""/>
+<h3 id="ui_banner_label" class="cisco-ise cisco-ise-banner-label">Hofstra Guest Portal</h3>
+                    </div>
+            </div>
+            <div data-role="content" data-theme="a" class="ui-content ui-body-a">
+                <div class="cisco-ise-body">
+                    <div class="cisco-ise cisco-ise-content cisco-ise-main-content ui-corner-all ui-body-a ui-shadow">
+    <noscript>
+        <p>You must turn on JavaScript to use this web site.</p>
+    </noscript>
+    <div class="cisco-ise-scriptable">
+        <h1 class="cisco-ise cisco-ise-content-header" id="ui_login_content_label">Sign On</h1>
+<!--<h1 class="cisco-ise cisco-ise-content-header" id="ui_login_content_label">Sign On</h1>
+-->
+    <p class="cisco-ise cisco-ise-instruction-message" id="ui_login_instruction_message">Welcome to the Hofstra Guest Portal. Sign on with the username and password provided to you.</p>
+<div id="portallogindiv" class="cisco-ise cisco-ise-login-text ui-corner-all">
+
+        <form id="portalloginForm" name="loginForm" action="LoginSubmit.action?from=LOGIN" method="POST">
+            <input type="hidden" name="token" value="OOWWU9UINMPR23X1ROL3QPYD9GF1NO6A" />
+<input type="hidden" name="portal" value="9750ba60-e576-11e5-b460-58ac785c7dd2">
+
+            <fieldset data-role="controlgroup" id="login_username_password">
+                    <label for="user.username">Username:</label>
+                    <input type="text" name="user.username" id="user.username" value="" autocomplete="off" required />
+
+                    <label for="user.password">Password:</label>
+                    <input type="password" name="user.password" id="user.password" value="" autocomplete="off" required />
+                </fieldset>
+            <div class="cisco-ise-form-buttons">
+                <input type="submit" data-theme="b" data-inline="true" data-mini="true"
+                       id="ui_login_signon_button"
+                       value="Sign On" />
+            </div>
+	</form>
+	<form name="selfRegForm" action="SelfRegistration.action?from=LOGIN" method="POST">
+                <input type="hidden" name="token" value="OOWWU9UINMPR23X1ROL3QPYD9GF1NO6A" />
+<div class="cisco-ise-form-buttons">
+                    <a href="#" id="ui_login_self_reg_button" class="ui-link">Don't have an account?</a>
+                </div>
+            </form>
+        </div>
+<div class="cisco-div-extender"></div>
+    </div>
+</div>
+<script>
+    (function() {
+        var page = require('cisco/ise/pages/login');
+
+        page.init({
+            includeAup: 'false',
+            requireAupScroll: 'false',
+            requireAupAcceptance: 'false',
+            requiredFieldError: 'This field is required.',
+            enableRateLimit: 'false',
+            rateLimitValue: ''
+        });
+ window.postMessage({ type: "registerSession" }, "*");
+    })();
+</script>
+<div class="cisco-ise-footer">
+    <div class="cisco-ise-footer-container">
+    </div>
+</div><p class="cisco-ise-footer-text">	                            </p>
+                    </div>
+            </div>
+            <script>
+    (function(){
+        var ise = require('cisco/ise'),
+            portalSession = require('cisco/ise/portalSession');
+
+        ise.portal.setPortalSessionId('010802dc-ad5d-46ff-a75e-0e132102a53e');
+        ise.portal.setPreviewMode('false');
+
+        portalSession.setParams({
+            portalId: '9750ba60-e576-11e5-b460-58ac785c7dd2',
+            portalIdleTimeout: '',
+            sessionIdleTimeout: ise.portal.SESSION_IDLE_TIMEOUT,
+            sessionId: '010802dc-ad5d-46ff-a75e-0e132102a53e',
+            retryUrl: 'http://1.1.1.1',
+            logoutUrl: 'Logout.action'
+        });
+    })();
+</script>
+<form id="tokenForm">
+                <input type="hidden" name="token" value="OOWWU9UINMPR23X1ROL3QPYD9GF1NO6A" />
+</form>
+            <div id="portal-session-timeout-popup" class="ui-content cisco-ise-popup-error"
+     data-role="popup" data-theme="c" data-overlay-theme="b" data-position-to="window">
+    <a href="#" data-rel="back" data-role="button" data-icon="delete"
+       data-iconpos="notext" class="ui-btn-left"></a>
+    <p>Your session has timed out. Click Retry to try again.</p>
+    <a href="#" data-role="button" data-theme="b" data-inline="true"
+       id="ui_session_timeout_retry_button"
+       >Retry</a>
+</div>
+</div>
+    </body>
+</html>

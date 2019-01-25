@@ -1,0 +1,15 @@
+X-Xss-Protection: 1;
+X-Cache: Miss from cloudfront
+X-Content-Type-Options: nosniff
+Content-Encoding: gzip
+Strict-Transport-Security: max-age=47474747; includeSubDomains; preload
+Vary: Accept-Encoding,User-Agent
+Server: Server
+X-Amz-Rid: 7MEC0DV2C446XFYPJEZC
+Via: 1.1 e000b4829c397da077a65028075a32a8.cloudfront.net (CloudFront)
+X-Amz-Cf-Id: Zz5aGXcIIGKGk_yA-T2yB6qxL0Pqyjd0dyETO5jzFVSEvrwDDNfTXA==
+Cache-Control: no-cache, no-transform
+Date: Tue, 25 Dec 2018 00:02:39 GMT
+P3P: policyref="https://www.amazon.com/w3c/p3p.xml",CP="CAO DSP LAW CUR ADM IVAo IVDo CONo OTPo OUR DELi PUBi OTRi BUS PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA HEA PRE LOC GOV OTC "
+Content-Type: text/html;charset=UTF-8
+X-Frame-Options: SAMEORIGIN

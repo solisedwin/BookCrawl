@@ -1,0 +1,18 @@
+X-Xss-Protection: 1;
+X-Cache: Miss from cloudfront
+X-Content-Type-Options: nosniff
+Content-Encoding: gzip
+Set-Cookie: session-id=132-3620500-6104431; Domain=.amazon.com; Expires=Tue, 01-Jan-2036 08:00:01 GMT; Path=/
+Set-Cookie: session-id-time=2082787201l; Domain=.amazon.com; Expires=Tue, 01-Jan-2036 08:00:01 GMT; Path=/
+Set-Cookie: ubid-main=132-4854621-2806213; Domain=.amazon.com; Expires=Tue, 01-Jan-2036 08:00:01 GMT; Path=/
+Set-Cookie: session-token=/qQ1hZe/iYiSiRMVV550/licvYsbbOmD4MX946oK0TyNsEFU4fPZ9WHw/zB90xIh71lD1e9bPVwmF5CQb8tD1sDVpCZ3drH86OzsOZc2LEDyOqsQKONVhpVlu1+oOOIBm/MIstHknYoc0MYMBskgI1b/h2vYee8a44fCVD7tfMBIHiUQNhkFlM+14jJ5NYSe; Domain=.amazon.com; Expires=Tue, 01-Jan-2036 08:00:01 GMT; Path=/
+Strict-Transport-Security: max-age=47474747; includeSubDomains; preload
+Vary: Accept-Encoding,User-Agent
+Server: Server
+X-Amz-Rid: HSRK3N7GD1N2T2DBTF7M
+Via: 1.1 accd17b9e81974748fb925f0caaec427.cloudfront.net (CloudFront)
+X-Amz-Cf-Id: 4CziD-D2khFtNjl3bv-TTnJv79dcQw5usZdtOU4ddBEd4_eyWTAjjA==
+X-Ua-Compatible: IE=edge
+Date: Sun, 13 Jan 2019 02:25:07 GMT
+X-Frame-Options: SAMEORIGIN
+Content-Type: text/html;charset=UTF-8

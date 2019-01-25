@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" >
+<head>
+	<title>Error.</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+<div id="header">
+   <div id="logo">
+   <a href="../"><img src="../images/fictiondb_logo.jpg" alt="FictionDB Logo" /></a>
+   </div>
+
+</div>
+
+<div class="colmask fullpage">
+    <div class="col1">
+                <!-- Column 1 start -->
+                <h1>You have reached a page that does not exist</h1>
+                <p>Click on the logo above to return to FictionDB</p>
+                <!-- Column 1 end -->
+    </div>
+</div>
+
+</body>
+</html>

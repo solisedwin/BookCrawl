@@ -1,0 +1,11 @@
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' http://www.cisco.com/ data:;
+Strict-Transport-Security: max-age=86400
+Server: server
+Location: /portal/PortalSetup.action?portal=9750ba60-e576-11e5-b460-58ac785c7dd2&sessionId=0a01190a01496834ce56355c&action=cwa&redirect=https%3A%2F%2Fwww.amazon.com%2Fs%2Fref%3Dnb_sb_ss_c_1_4
+Date: Wed, 09 Jan 2019 02:14:43 GMT
+X-Frame-Options: SAMEORIGIN
+X-Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' http://www.cisco.com/ data:;
+Content-Type: text/html;charset=utf-8
+X-Webkit-Csp: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' http://www.cisco.com/ data:;

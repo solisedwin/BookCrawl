@@ -1,0 +1,18 @@
+Via: 1.1 7969ab02c38bf363682fddd4258a6d30.cloudfront.net (CloudFront)
+X-Cache: Miss from cloudfront
+X-Content-Type-Options: nosniff
+Content-Encoding: gzip
+Set-Cookie: session-id=145-0518515-8923749; Domain=.amazon.com; Expires=Tue, 01-Jan-2036 08:00:01 GMT; Path=/
+Expires: -1
+Vary: Accept-Encoding,User-Agent
+Server: Server
+X-Xss-Protection: 1;
+X-Amz-Cf-Id: aYx-kThcQsD5wqgKvn8aY6nBvoO-cJuUbgxCGThK5AriFkeADdepGA==
+Pragma: no-cache
+Cache-Control: no-cache
+Date: Sat, 18 Aug 2018 02:09:37 GMT
+Strict-Transport-Security: max-age=47474747; includeSubDomains; preload
+Strict-Transport-Security: max-age=47474747;
+Content-Type: text/html;charset=UTF-8
+P3P: policyref="https://www.amazon.com/w3c/p3p.xml",CP="CAO DSP LAW CUR ADM IVAo IVDo CONo OTPo OUR DELi PUBi OTRi BUS PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA HEA PRE LOC GOV OTC "
+X-Frame-Options: SAMEORIGIN

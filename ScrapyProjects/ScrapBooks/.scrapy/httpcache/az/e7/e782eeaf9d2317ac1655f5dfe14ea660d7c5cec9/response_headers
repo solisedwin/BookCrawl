@@ -1,0 +1,13 @@
+X-Xss-Protection: 1;
+X-Content-Type-Options: nosniff
+Content-Encoding: gzip
+Set-Cookie: session-token=ptFRp4E3kvubiahVA7TSISLk/DYoz+NVSE7XFbNzZe+qLWLA3pLiLk9Vm636TSXPDnGXNO73PF695QYcwykiZDi5jMWMd8bsAaPsN3//kLSyIv5/WsffW2uJNGCWHitNeF1vDq/C2QXbuEg7/bO7laSOW+ExrZ50LH91IqlXLVH1Jh5DeWE33SZbEPoVfUBu; Domain=.amazon.com; Expires=Tue, 01-Jan-2036 08:00:01 GMT; Path=/
+Strict-Transport-Security: max-age=47474747; includeSubDomains; preload
+Vary: Accept-Encoding,User-Agent
+Server: Server
+X-Amz-Rid: AT02AS99VWWWARDGW7FP
+Cache-Control: no-cache, no-transform
+Date: Thu, 10 Jan 2019 23:07:29 GMT
+P3P: policyref="https://www.amazon.com/w3c/p3p.xml",CP="CAO DSP LAW CUR ADM IVAo IVDo CONo OTPo OUR DELi PUBi OTRi BUS PHY ONL UNI PUR FIN COM NAV INT DEM CNT STA HEA PRE LOC GOV OTC "
+Content-Type: text/html;charset=UTF-8
+X-Frame-Options: SAMEORIGIN

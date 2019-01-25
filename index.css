@@ -1,0 +1,86 @@
+
+
+*{
+	margin: 0px;
+	padding: 0px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+
+}
+
+/* Class */
+
+
+ 
+
+body {
+
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+
+body image{
+
+	z-index: -1;
+}
+/*
+#back_div{
+
+height: 100%;
+width: 100%;
+border-style: solid;
+position: absolute;
+background-repeat: no-repeat;
+}
+*/
+
+#msg {
+	position: relative;
+	color: #114dad;
+	font-size: 25px;
+
+	}
+
+.spanMsg {
+	margin-top: 500px;
+	position: absolute;
+}	
+
+#list{
+	list-style: none;
+}
+
+#btn{
+
+height: 100px;
+width: 300px;
+border-style: solid;
+border-radius: 25px;
+border-color: #f442d9;
+position: relative;
+
+
+}
+
+
+
+
+
+li {
+	font-size: 25px;
+}
+
+/* Google fadeout code */
+
+#slider {
+    opacity:1;
+    transition: opacity 1s; 
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+#slider.fadeOut {
+    opacity:0;
+}

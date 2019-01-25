@@ -1,0 +1,303 @@
+
+
+*{
+	margin: 0px;
+	padding: 0px;
+	
+}
+
+body{
+	background-color: #73bc90;
+	overflow-x: hidden;
+
+}
+
+#logo{
+	margin-left: 360px;
+	height: 120px;
+	width: 120px;
+	margin-top: 0px;
+
+
+}
+
+
+#header{
+
+	overflow: initial;
+	background-color: white;
+	height: 90px;
+	border-bottom-style: solid;
+	border-color: black;
+	margin: 0px;
+	position: relative;	
+
+
+}
+
+
+
+
+.bookCover{
+
+margin-left: 8px;  
+margin-top: 5px; 
+height: 245px; 
+width: 165px;
+
+
+}
+
+
+.bookCover img: hover {
+cursor: pointer;
+
+
+}
+
+
+
+
+#header b{
+
+	
+	font: cursive;
+	position: relative;
+	margin-top: 40px;
+
+
+}
+
+
+
+
+#header h1 {
+	float: left;	
+	font-family: fantasy;
+	margin-top: 50px;
+	position: relative;
+	margin-left: 10px;
+
+
+}
+
+
+#counter_span{
+	margin-top: 60px;
+	margin-left: 350px;
+	position: absolute;
+	margin-right: 0px;
+	margin-bottom: 0px;
+
+}
+
+
+
+
+#counter_span p{
+
+	font-size: 21px;
+}
+
+
+
+
+#header_line {
+
+	border-right-style: solid;
+	border-right-color: grey;
+	position: absolute;
+	display: inline;
+	width: 300px;
+	height: 90px;
+	margin: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+
+
+}
+
+
+
+
+
+
+
+}
+
+
+#email_link {
+
+	border-style: solid;
+	border-color: red;
+	border-width: thick;
+	margin-left: 200px;
+	position: relative;
+
+
+}
+
+
+
+
+
+
+#email_link a{
+	color: white;
+	text-decoration: none;
+	padding-left: 10px; 
+
+}
+
+
+
+
+#email_link a:hover{
+
+	color: blue;
+}
+
+
+
+
+.client_info {
+
+margin-left: 20px;
+background-color: #ceceb9;
+height: 170px;
+width: 175px;
+border-style: solid;
+border-color: black;
+position: relative;
+margin-top: 20px;
+
+overflow-wrap: break-word;
+
+}
+
+
+.book_information{
+
+	height: 100px;
+	width: 200px;
+	background-color: #c3cee0;
+
+}
+
+
+.book_layering{
+
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+
+
+}
+
+
+.book_index {
+
+background-color: #ceceb9;
+height: 250px;
+width: 300px;
+border-style: dotted;
+border-color: black;
+margin-left: 20px;
+position: relative;
+margin-top: 25px;
+
+overflow-wrap: break-word;
+
+overflow-x: scroll;
+overflow-x: hidden;
+
+}
+
+
+
+
+
+.books_container{
+
+	overflow-x: scroll;
+	overflow-x: hidden;
+
+
+	border-style: solid;
+	border-width: 6px;
+	border-color: black;
+
+	position: absolute;
+	
+	
+	margin-left: 500px;
+	margin-top: 100px;
+	
+
+	height: 525px;
+	width: 1400px; 
+
+	background-color: #e5e5ea;
+
+
+}
+
+
+
+
+
+#email_footer{
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	height: 200px;
+	background-color: #3d3d3b;
+
+}
+
+#email_label{
+
+	color: white;
+	margin-left: 760px;
+	font-size: 25px;
+
+}
+
+
+#email_content{
+
+	display: inline-block;
+	margin-left: 730px;
+	margin-top: 10px;
+
+}
+
+
+input[type= email]{
+
+	height: 30px;
+	width: 400px;
+}
+
+
+input[type=submit]{
+
+	width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.error {
+	
+	color: red;	
+	font-size: 20px;
+	position: absolute;
+	margin-left: 430px; 
+
+}

@@ -1,0 +1,12 @@
+X-Xss-Protection: 1;
+X-Content-Type-Options: nosniff
+Content-Encoding: gzip
+Set-Cookie: session-token=7fVoGD5MTZA6pgIR883gGdU3vijSi4HWwdM7W1sD51BjOqSvns9ctZw8qC7ttmoxrLGyx4fJXbyXcroPMvEKccIEGjtvD+hDc45n/k0wzc4SJ7rv+jN+shS8FVJ0ABG+cIXD7z3vu7d5ZTuSWqzSPTfgIX9Kw/QSjAY3caQ8DYQ6hWSPKR7SGGST0n74OokC; Domain=.amazon.com; Expires=Tue, 01-Jan-2036 08:00:01 GMT; Path=/
+Strict-Transport-Security: max-age=47474747; includeSubDomains; preload
+Strict-Transport-Security: max-age=47474747;
+Vary: Accept-Encoding,User-Agent
+Server: Server
+X-Ua-Compatible: IE=edge
+Date: Mon, 20 Aug 2018 04:06:53 GMT
+X-Frame-Options: SAMEORIGIN
+Content-Type: text/html;charset=UTF-8

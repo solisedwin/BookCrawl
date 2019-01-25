@@ -1,0 +1,14 @@
+X-Xss-Protection: 1;
+X-Cache: Miss from cloudfront
+X-Content-Type-Options: nosniff
+Content-Encoding: gzip
+Strict-Transport-Security: max-age=47474747; includeSubDomains; preload
+Vary: Accept-Encoding,User-Agent
+Server: Server
+X-Amz-Rid: W4Z0K9J4DRG1FKV7KFZ1
+Via: 1.1 e4b6271438d0996ea6650d16006bc05a.cloudfront.net (CloudFront)
+X-Amz-Cf-Id: lT4JTj8d4yFh6Rey47h6RzC5goPGJuQPkN60KRrVOLoQgGQ0mwoJdQ==
+X-Ua-Compatible: IE=edge
+Date: Tue, 08 Jan 2019 04:10:47 GMT
+X-Frame-Options: SAMEORIGIN
+Content-Type: text/html;charset=UTF-8

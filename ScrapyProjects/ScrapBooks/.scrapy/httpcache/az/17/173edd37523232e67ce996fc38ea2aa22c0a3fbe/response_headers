@@ -1,0 +1,16 @@
+X-Xss-Protection: 1;
+X-Cache: Miss from cloudfront
+X-Content-Type-Options: nosniff
+Content-Encoding: gzip
+Set-Cookie: session-token=BE60jNWmLIb48iBSBtnrVjAzffaIV0b50EDL6zsE/WZyTANkJ5rU2Q40g6SUsvIRtBJb9s57RZ+57laOkn1VzJg88JTvk9zuiIx1m+7MRRB4gv7918pG3kQnRSLBHa2amGAzYENQvolNqfjw6q2L44ubsfk2l4IGGS1RCWUSGlZBafyNbWlsdSP7J3M3aB6b; Domain=.amazon.com; Expires=Tue, 01-Jan-2036 08:00:01 GMT; Path=/
+Strict-Transport-Security: max-age=47474747; includeSubDomains; preload
+Strict-Transport-Security: max-age=47474747;
+Vary: Accept-Encoding,User-Agent
+Server: Server
+X-Amz-Rid: MDA5GK2W5MVHW53PS7AH
+Via: 1.1 bcecb6930c716682f92ebe69044fbe89.cloudfront.net (CloudFront)
+X-Amz-Cf-Id: Jue2wWLG3Hip32uzIS0QEs9xVGTWW6a5ljgFlc__ksqfX4v6fzXGcg==
+X-Ua-Compatible: IE=edge
+Date: Wed, 05 Sep 2018 21:01:11 GMT
+X-Frame-Options: SAMEORIGIN
+Content-Type: text/html;charset=UTF-8

@@ -1,0 +1,13 @@
+Expect-Ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+X-Powered-By: Servlet/2.5 JSP/2.1
+Set-Cookie: __cfduid=d290993ac4c80d2e6d23b6d70a9e4f9df1547718283; expires=Fri, 17-Jan-20 09:44:43 GMT; path=/; domain=.alibris.com; HttpOnly; Secure
+Set-Cookie: JSESSIONID=fKGccQTLNGMdFvRb02PlHCTWcF3y9FnYmRTyBSGJnnqXkx5L2TyJ!-785017378; path=/; HttpOnly
+Set-Cookie: asid=fKGccQTLNGMdFvRb02PlHCTWcF3y9FnYmRTyBSGJnnqXkx5L2TyJ!-785017378!1547718283588; domain=.alibris.com; expires=Saturday, 09-Jan-2049 09:44:43 GMT; path=/
+Set-Cookie: vid=8b01d28d-09e4-4ae9-bdb6-7a11a8ba89c0; domain=.alibris.com; expires=Saturday, 09-Jan-2049 09:44:43 GMT; path=/
+Set-Cookie: jid=fKGccQTLNGMdFvRb02PlHCTWcF3y9FnYmRTyBSGJnnqXkx5L2TyJ!-785017378!1547718283588; domain=.alibris.com; path=/
+Set-Cookie: NSC_bmjcsjt.dpn_dm2=5ccba3d86d646b0875b54ae0843e86428282855840268143dcfa7d4ef9a78571d1750259;path=/;httponly
+Content-Encoding: gzip
+Server: cloudflare
+Date: Thu, 17 Jan 2019 09:44:43 GMT
+Cf-Ray: 49a7e288bdca2150-EWR
+Content-Type: text/html; charset=ISO-8859-1
