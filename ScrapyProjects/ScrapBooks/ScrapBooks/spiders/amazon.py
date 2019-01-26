@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+  # -*- coding: utf-8 -*-
 import scrapy
 import sys
 sys.path.append('/var/www/html/ScrapyProjects/ScrapBooks/ScrapBooks')
@@ -18,6 +18,9 @@ import MySQLdb
 
 class AmazonSpider(scrapy.Spider):
 
+
+
+
   #set up, not methods. Important information for the spider
   name = 'az'
   allowed_domains = ["amazon.com"]
@@ -30,41 +33,41 @@ class AmazonSpider(scrapy.Spider):
 
   
   #set up MySQL database 
-  conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakepasswordforgithub", db="BookCrawler");
+  conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fake_ass_p[assword_for_github", db="BookCrawler");
   # you must create a Cursor object. It will let you execute all the queries you need  
   cur = conn.cursor();
 
 
   def getGenre(self):
-    with open('/var/www/html/client_data.json') as f: 
+    with open('/var/www/html/BookCrawl/client_data.json') as f: 
       data = json.load(f);
       genre = data["genre"].replace('"', '');
       return genre;
 
 
   def getLastName(self):
-    with open('/var/www/html/client_data.json') as f:
+    with open('/var/www/html/BookCrawl/client_data.json') as f:
       data = json.load(f);
       lastName = data["lastName"].replace('"', '');
       return lastName.strip();
 
 
   def getFirstName(self):
-    with open('/var/www/html/client_data.json') as f:
+    with open('/var/www/html/BookCrawl/client_data.json') as f:
       data = json.load(f);
       firstName = data["firstName"].replace('"','');
       return firstName.strip();
 
 
   def getPages(self):
-    with open('/var/www/html/client_data.json') as f:
+    with open('/var/www/html/BookCrawl/client_data.json') as f:
         data = json.load(f);
         pages = data['pages'].strip();
         return pages;
 
 
   def getYears(self):
-    with open('/var/www/html/client_data.json') as f:
+    with open('/var/www/html/BookCrawl/client_data.json') as f:
       data = json.load(f);
       startYear = data['startYr'].strip();
       endYear = data['endYr'].strip();
@@ -72,7 +75,7 @@ class AmazonSpider(scrapy.Spider):
 
 
   def getPublisher(self):
-    with open('/var/www/html/client_data.json') as f:
+    with open('/var/www/html/BookCrawl/client_data.json') as f:
         data = json.load(f);
         publisher = data['publisher'].strip();
         return publisher;    

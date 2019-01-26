@@ -4,7 +4,7 @@ session_start();
 
 
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
+ini_set('display_errors', 'On');
 
 
 
@@ -18,7 +18,7 @@ require_once('/usr/share/php/libphp-phpmailer/PHPMailerAutoload.php');
    
     header("location: display.php?email=empty");
     
-    }elseif(!isset($_SESSION['list']) ||  empty($_SESSION['list']))   {
+    }elseif(!isset($_SESSION['email_list']) ||  empty($_SESSION['email_list']))   {
 
         header("location: display.php?list=empty");
     }
@@ -35,7 +35,7 @@ require_once('/usr/share/php/libphp-phpmailer/PHPMailerAutoload.php');
     $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'BookCrawler10@gmail.com';                 // SMTP username
-    $mail->Password = 'fakkepasswordforgithub';                           // SMTP password
+    $mail->Password = 'fakeemailforgithubknnkjnnk';                           // SMTP password
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                                    // TCP port to connect to
 
@@ -59,8 +59,10 @@ require_once('/usr/share/php/libphp-phpmailer/PHPMailerAutoload.php');
     $counter = 0;
     $message = "";
 
+
+
     //show list of books
-    foreach ($_SESSION['list'] as $key => $value ) {
+    foreach ($_SESSION['email_list'] as $key => $value ) {
         $counter += 1;
         $message .=  $counter . ".) " . $value . "\n";
     }
@@ -70,10 +72,11 @@ require_once('/usr/share/php/libphp-phpmailer/PHPMailerAutoload.php');
     $mail->AltBody = 'AltBody:  \n' . $message;
 
     $mail->send();
-  
+
    
     } catch (Exception $e) {
     echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+    header("location: display.php?email=send_error");
 
     }
 

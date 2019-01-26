@@ -5,6 +5,7 @@ import requests
 #from googlesearch import search
 import json
 from MyAdapter import MyAdapter
+import scrapy;
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
 from lxml.html import fromstring
@@ -18,8 +19,20 @@ import os
 import MySQLdb
 
 from datetime import datetime
+from spiders import amazon;
 
 import mechanize
+
+
+
+import sys
+import os.path
+sys.path.append(
+os.path.abspath(os.path.join(os.path.dirname(__file__), '/var/www/html/BookCrawl/ScrapyProjects/ScrapBooks/ScrapBooks/spiders')))
+
+from amazon import AmazonSpider
+
+
 
 
 
@@ -29,14 +42,15 @@ match_found = False;
 
 
 
+
 #set up MySQL database 
-conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakepassword", db="BookCrawler");
+conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakepasswordforgithub", db="BookCrawler");
 # you must create a Cursor object. It will let you execute all the queries you need  
 cur = conn.cursor();
 
 
 def getGenre():
-    with open('/var/www/html/client_data.json') as f:       
+    with open('/var/www/html/BookCrawl/client_data.json') as f:       
         data = json.load(f);
         genre = data["genre"].replace('"', '');
         return genre;
@@ -44,26 +58,26 @@ def getGenre():
 
 #returns authors last name outlined by user beforehand. Could be blank(dont have a specific author in mind)
 def getLastName():
-    with open('/var/www/html/client_data.json') as f:
+    with open('/var/www/html/BookCrawl/client_data.json') as f:
         data = json.load(f);
         lastName = data['lastName'].strip();
         return lastName;
     
 def getFirstName():
-    with open('/var/www/html/client_data.json') as f:
+    with open('/var/www/html/BookCrawl/client_data.json') as f:
         data = json.load(f);
         firstName = data['firstName'].strip();
         return firstName;
 
 def getPages():
-    with open('/var/www/html/client_data.json') as f:
+    with open('/var/www/html/BookCrawl/client_data.json') as f:
         data = json.load(f);
         pages = data['pages'].strip();
         return pages;
 
 
 def getYears():
-    with open('/var/www/html/client_data.json') as f:
+    with open('/var/www/html/BookCrawl/client_data.json') as f:
         data = json.load(f);
         startYear = data['startYr'].strip();
         endYear = data['endYr'].strip();
@@ -78,7 +92,7 @@ def getYears():
 
 #SQL Query for all books who DON'T have lastName info, we scrap the web for lastName info so then we can compare to client perference.
 def incomplete_books(genre):
-    cur.execute("SELECT * FROM %s WHERE BOOK IS NOT NULL" % (genre)); 
+    cur.execute("SELECT * FROM %s WHERE BOOK IS NOT NULL AND StartYear IS NOT NULL" % (genre)); 
     data = cur.fetchall();
 
     data = list(data);
@@ -122,14 +136,18 @@ def nameMatches(genre, name, which_name_bool):
     cur.execute("SELECT * FROM %s WHERE %s = '%s'" % (genre, name_column, name));
     data = cur.fetchall();
 
+    booklist = [];
+
     #atleast one element that has same last name 
     if(len(data) > 0):
         for i in range(len(data)):
             #returns only book title for row index i. Column 6
             title = str(data[i][6]).strip();
             title = title.replace(' ','-');
+            booklist.append(title);
             googleScrap(title);
-            
+
+    return booklist;
 
 
 
@@ -140,6 +158,7 @@ def both_name_matches(genre, firstName, lastName):
 
     cur.execute("SELECT * FROM %s WHERE FirstName = '%s' and LastName = '%s'" % (genre, firstName, lastName));
     data = cur.fetchall();
+    booklist = [];
 
     #atleast one element that has same last name 
     if(len(data) > 0):
@@ -147,8 +166,10 @@ def both_name_matches(genre, firstName, lastName):
             #returns only book title for row index i. Column 6
             title = str(data[i][6]).strip();
             title = title.replace(' ','-');
-            googleScrap(title);
-
+            booklist.append(title);
+            googleScrap(title); 
+    
+    return booklist;
 
 
 
@@ -164,20 +185,23 @@ def main():
     firstName = getFirstName();
 
 
+    bookList = [];
+
     if firstName and lastName:
-        both_name_matches(genre, firstName, lastName); 
+        bookList = both_name_matches(genre, firstName, lastName); 
     elif lastName:
         #SQL data already knows last name
-        nameMatches(genre, lastName, True);
+        bookList = nameMatches(genre, lastName, True);
     elif firstName:
-        nameMatches(genre, firstName, False);
+       bookList = nameMatches(genre, firstName, False);
     else:
         #Author first and last name are blank.
         incomplete_books(genre);
 
+
+    return bookList;
+
     
-
-
 
 
 
@@ -230,6 +254,7 @@ def sqlUpdate(title, date,firstName,lastName,pageCount,publisher):
 
 def delete_book(title, genre):
     
+    title = title.replace('"','');
 
     try:
 
@@ -481,7 +506,6 @@ def pages_date_filter(date, pageCount):
 
 
 
-
 if __name__ == '__main__':  
     #View to see how long it takes for program to run
     startTime = datetime.now();
@@ -490,8 +514,20 @@ if __name__ == '__main__':
     s.mount('https://', MyAdapter())    
     
     #query searches to update and find books that match client's pereference
-    main();
+    bookList = main();
     
+
+    if (len(bookList) <= 7 and len(bookList) > 0):
+
+        process = CrawlerProcess({
+        'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36'
+        })
+
+        spider = AmazonSpider();
+
+        process.crawl(spider);
+        process.start();
+
 
     print "Time it took to run query.py: " + str(datetime.now() - startTime);
 

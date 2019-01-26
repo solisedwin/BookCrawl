@@ -45,11 +45,8 @@
 		createJson();
 		sql();
 
+		runLinux();	
 		
-		if(	($_SESSION['scrap']) == 'Y') {
-			runLinux();	
-		}
-	
 	
 	}
 
@@ -85,6 +82,14 @@
 
 	//Saves clients book preference data in a json format
 	function createJson(){
+
+		if(file_exists('/var/www/html/BookCrawl/client_data.json')){
+			unlink('/var/www/html/BookCrawl/client_data.json');
+		}
+
+
+
+
 		$data = array("genre"=> $_SESSION['genre'],"firstName"=>$_SESSION['firstName'], "lastName"=>$_SESSION['lastName'],"publisher"=>$_SESSION['publisher'], "startYr"=>$_SESSION['startYr'], "endYr"=>$_SESSION['endYr'], "pages"=> $_SESSION['pages']);
 		
 		$jsonContent = json_encode($data);	
@@ -104,8 +109,6 @@
 		require_once('sql.php');
 
 		echo '<br><br>';
-		echo 'Scrap more data: ' . $_SESSION['scrap'];
-
 
 	}
 
@@ -126,12 +129,6 @@
 	chdir($query_path);
 	$query_output = shell_exec("python query.py 2>&1");
 	
-	
-	#run amazon spider to get more data on books(pages and publisher info)
-	$amazon_path = "/var/www/html/BookCrawl/ScrapyProjects/ScrapBooks/";
-	chdir($amazon_path);
-	shell_exec('scrapy crawl az');
-
 
 	#filter all the books that correspond with user pereference
 	$query_path = "/var/www/html/BookCrawl/ScrapyProjects/ScrapBooks/ScrapBooks/";
@@ -150,6 +147,7 @@
 	exit();
 
 	}
+
 
 
 	main();

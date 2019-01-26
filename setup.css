@@ -5,13 +5,39 @@ body {
 	overflow: none;
 	overflow-y: hidden;
 }
+  
+
+#privacy{
+
+	border-style: solid;
+	border-color: black;
+	width: 400px;
+	height: 200px;
+	position: absolute;
+
+
+}
+
+#main_info {
+
+	margin-top: 135px;
+
+	display: inline-block;
+
+
+}
+
 
 .container {
 
 background-color: #edd490;
 display: inline-block;
-margin-top: 100px;
-margin-left: 100px;
+margin-left: 590px;
+
+box-shadow: 10px 10px;
+
+
+
 
 }	
 
@@ -36,7 +62,7 @@ display: inline-flex;
 	border-bottom-style:solid;
 	border-bottom-color: black;
 	border-width: 1px;
-	
+	height: 140px;
 }
 
 
@@ -45,10 +71,12 @@ display: inline-flex;
 	margin-top: 40px;
 	margin-left: 590px;
 	border-style: dashed;
-	height: 90px;
+	height: 120px;
 	width: 45%;
 	background-color:#edd490; 
 	display: inline-block;
+
+
 
 
 }
@@ -63,9 +91,15 @@ display: inline-flex;
 
 a {
 	text-decoration:  none;
-	color: black;
+	color: white;
 	margin-left: 25px;
+	font-size: 32px;
+	margin-bottom: 0px	;
+	margin-left: 1000px;
+	font-style: italic;
+
 }	
+
 
 a u {
 	text-decoration: none;
@@ -74,7 +108,7 @@ a u {
 
 #logo {
 	vertical-align: middle;
-
+	margin-bottom: 55px;
 }
 
 #footer{
@@ -82,6 +116,7 @@ a u {
 	border-style: solid;
 	position: relative;
 	bottom: 0;
+	margin-top: 25px;
 	height: 250px;
 	background-color: #3d3d3b;
 	width: 100%;

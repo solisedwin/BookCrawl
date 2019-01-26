@@ -15,30 +15,30 @@ class AlibrisspiderSpider(scrapy.Spider):
 
 
 
-
+    
     #get genre
-    with open('/var/www/html/client_data.json') as f:
+    with open('/var/www/html/BookCrawl/client_data.json') as f:
         data = json.load(f);
         genre = data["genre"].replace('"', '');
 
 
 
     #set up MySQL database 
-    conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakepasswordgit", db="BookCrawler");
+    conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakeasspassword", db="BookCrawler");
     # you must create a Cursor object. It will let you execute all the queries you need  
     cur = conn.cursor();
 
 
 
     def getLastName(self):
-        with open('/var/www/html/client_data.json') as f:
+        with open('/var/www/html/BookCrawl/client_data.json') as f:
             data = json.load(f);
             lastName = data["lastName"].replace('"','');
             return lastName.strip();
 
 
     def getFirstName(self):
-        with open('/var/www/html/client_data.json') as f:
+        with open('/var/www/html/BookCrawl/client_data.json') as f:
             data = json.load(f);
             firstName = data['firstName'].replace('"','');
             return firstName.strip();
@@ -46,7 +46,7 @@ class AlibrisspiderSpider(scrapy.Spider):
 
 
     def getYears(self):
-        with open('/var/www/html/client_data.json') as f:
+        with open('/var/www/html/BookCrawl/client_data.json') as f:
             data = json.load(f);
             startYear = data['startYr'].strip();
             endYear = data['endYr'].strip();

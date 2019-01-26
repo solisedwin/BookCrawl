@@ -178,8 +178,11 @@ overflow-wrap: break-word;
 
 .book_information{
 
-	height: 100px;
+	height: 200px;
 	width: 200px;
+
+	position: relative;		
+
 	background-color: #c3cee0;
 
 }
@@ -191,8 +194,15 @@ overflow-wrap: break-word;
 	border-color: black;
 	border-width: 2px;
 
+	width: 200px;
+
+	display: inline-block;
+
 
 }
+
+
+
 
 
 .book_index {
@@ -218,7 +228,6 @@ overflow-x: hidden;
 
 
 .books_container{
-
 	overflow-x: scroll;
 	overflow-x: hidden;
 
@@ -235,9 +244,11 @@ overflow-x: hidden;
 	
 
 	height: 525px;
-	width: 1400px; 
+	width: 1300px; 
 
 	background-color: #e5e5ea;
+
+	display: inline-block;
 
 
 }

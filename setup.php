@@ -25,11 +25,30 @@ session_start();
 		</header>
 
 
+		<div id = 'main_info'>
+
+
+		<!-- Website's privacy policy -->
+		<div id = 'privacy'>
+			
+			<center><i>	<b> Privacy Policy </b>	</i></center>
+			<hr>
+
+			<p>
+				BookCrawl doesnt save any data whatsoever. Which includes but is not limited to
+				client's location, cookies, email, client machine, or even book perference. All data is erased after the 
+				end of every session. We protect and understand the importance of security. 
+
+			</p>	
+
+
+		</div>
+
 
 
 
 		<!-- Container for information -->
-		<center>
+	
 
 		<div class="container">
 			<p>If your not quite sure about the information or dont care for a perference. Then feel free to <b>leave the specfic input empty. </b> </p> <br>
@@ -121,18 +140,23 @@ session_start();
 
 </div>
 
-</center>
 
 
 <div class="info">
 	
 
 <p> Process might take some time to load. Usually takes 6-10 mintues. <br> 
-Please wait while website collects data. </p>
+Please wait while website collects data. <br>
+<b> * Note ! The more info you provide, the more quicker will the program run * </b> 
+</p>
 
 
 
-</div>
+	</div>
+
+<!-- main_info div -->
+</div>	
+
 
 
 <br><br><br><br>

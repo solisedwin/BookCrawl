@@ -6,14 +6,14 @@ from bs4 import BeautifulSoup
 
 
 
-conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakepassforgit", db="BookCrawler");
+conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakepasswordforgithub", db="BookCrawler");
 # you must create a Cursor object. It will let you execute all the queries you need  
 cur = conn.cursor();
 
 
 
 def getGenre():
-    with open('/var/www/html/client_data.json') as f:       
+    with open('/var/www/html/BookCrawl/client_data.json') as f:       
         data = json.load(f);
         genre = data["genre"].replace('"', '');
         return genre.strip();
@@ -21,26 +21,26 @@ def getGenre():
 
 
 def getLastName():
-    with open('/var/www/html/client_data.json') as f:
+    with open('/var/www/html/BookCrawl/client_data.json') as f:
         data = json.load(f);
         lastName = data['lastName'].strip();
         return lastName;
     
 def getFirstName():
-    with open('/var/www/html/client_data.json') as f:
+    with open('/var/www/html/BookCrawl/client_data.json') as f:
         data = json.load(f);
         firstName = data['firstName'].strip();
         return firstName;
 
 def getPages():
-    with open('/var/www/html/client_data.json') as f:
+    with open('/var/www/html/BookCrawl/client_data.json') as f:
         data = json.load(f);
         pages = data['pages'].strip();
         return int(pages);
 
 
 def getYears():
-    with open('/var/www/html/client_data.json') as f:
+    with open('/var/www/html/BookCrawl/client_data.json') as f:
         data = json.load(f);
         startYear = data['startYr'].strip();
         endYear = data['endYr'].strip();
@@ -50,7 +50,7 @@ def getYears():
 
 
 def getPublisher():
-    with open('/var/www/html/client_data.json') as f:
+    with open('/var/www/html/BookCrawl/client_data.json') as f:
         data = json.load(f);
         publisher = data['publisher'].strip();
         return publisher;
@@ -80,7 +80,7 @@ def valid_books_json(title, firstName, lastName, year, publisher, pages, src):
 
 
     try:
-        with open('/var/www/html/valid_books.json') as infile:
+        with open('/var/www/html/BookCrawl/valid_books.json') as infile:
             data = json.load(infile)
     except Exception as e:
         data = {}
@@ -99,7 +99,7 @@ def valid_books_json(title, firstName, lastName, year, publisher, pages, src):
 
     })
 
-    with open('/var/www/html/valid_books.json','w+') as outfile:
+    with open('/var/www/html/BookCrawl/valid_books.json','w+') as outfile:
       json.dump(data,outfile , default = set_default)
 
 
@@ -157,12 +157,13 @@ def searchImg(title,lastName):
          #Search amazon for book cover, if none was found in Bing Images
          #We only get accurate pictures if last name of author is known. (Not NUll)
        
+        return "";
         return amazonImg(title,lastName);
         
     except Exception as e:
         print "~~ searchImg Exception: " + str(e) + " ~~"
-        return amazonImg(title,lastName);
-
+        #return amazonImg(title,lastName);
+        return "";
 
 
 
@@ -196,6 +197,7 @@ def amazonImg(title,lastName):
     except Exception as e:
         print "~~ amazonImg Exception: " + str(e) + " ~~";
         return "";
+
 
 
 
@@ -259,23 +261,34 @@ def final_choices():
         print '\n ****** MATCH !!! BOOK RECOMMENDATION IS: ' + title + " by " + firstName + " " + lastName + '*******\n';
 
         #scraps amazon and bings image database. Match picture to book
-        image_src = searchImg(title,lastName);
+        #image_src = searchImg(title,lastName);
 
         #Save valid book along with its image(if one is found)
-        valid_books_json(title, firstName, lastName, year, publisher, pages, image_src);
+        valid_books_json(title, firstName, lastName, year, publisher, pages, "");
+
+   
 
 
 
 
 
+def empty_table(genre):
+    cur.execute("TRUNCATE TABLE %s " % (genre));
+    conn.commit();
+    print genre + " table has been emptied";
 
-def sql_extract(genre):
-    cur.execute("SELECT * FROM %s WHERE BOOK IS NOT NULL" % (genre)); 
+
+
+
+
+def sql_extract(genre, query):
+    cur.execute("SELECT * FROM %s WHERE BOOK IS NOT NULL %s" % (genre, query)); 
     data = cur.fetchall();
 
     data = list(data);
 
     try:
+        #50 is our limit for amount of books we show. EVEN IF we have few valid books based on author's name
         for i in range(50):
             #returns only book title for row index i. Column 6
             title = str(data[i][6]).strip();
@@ -288,32 +301,11 @@ def sql_extract(genre):
             sql_pages = data[0][4];
             sql_publisher = data[0][5];
 
-            image_src = searchImg(title, sql_lastName);
+            image_src = searchImg(title, sql_lastName); 
             valid_books_json(title, sql_firstName, sql_lastName, sql_year, sql_publisher, sql_pages, image_src);
 
-
-
-     
     except Exception as e:
       print "~~ sql_extract Exception: " + str(e) + ' ~~';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -327,8 +319,26 @@ def main():
     #final_choices();
 
     genre = getGenre();
+    firstName = getFirstName();
+    lastName = getLastName();
 
-    sql_extract(genre);
+    if not firstName and not lastName:
+        query = 'AND StartYear IS NOT NULL';
+
+        sql_extract(genre , query);
+    elif firstName:
+        query = " AND FirstName = '%s'" % (firstName);
+        sql_extract(genre, query);
+    elif lastName:
+        query = " AND LastName = '%s'" % (lastName);
+        sql_extract(genre, query);
+    else:
+        pass;
+
+
+    empty_table(genre);
+
+
 
 
 

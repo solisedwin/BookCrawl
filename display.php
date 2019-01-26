@@ -3,6 +3,8 @@
 <?php
 session_start();
 
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');	
 ?>
 <html>
 <head>
@@ -26,6 +28,7 @@ if(strpos($fullUrl, 'email=sent') == true){
 	echo 'alert("Email has been sent")';
 	echo '</script>';
 }
+
 
 ?>
 
@@ -62,13 +65,8 @@ if(strpos($fullUrl, 'email=sent') == true){
 
 
 
-	<!-- Button to email Results 
-		<span id="email_link">
 
-			<a href='#email_footer'> Email Books </a>
-
-		</span>
-	-->
+	
 </header>
 
 
@@ -113,6 +111,7 @@ if(strpos($fullUrl, 'email=sent') == true){
 
 
 
+
 	//Gets information from each book (publisher, author, date, pages)
 	$file = file_get_contents('valid_books.json');
 	$json_file = json_decode($file,true);
@@ -120,9 +119,14 @@ if(strpos($fullUrl, 'email=sent') == true){
 	
 	$counter = 1;
 
+	$email_book_list = array();
+
 
 	foreach ($json_file as $key => $value) {
 
+
+		$key = str_replace('-', ' ', $key);
+		array_push($email_book_list, $key);
 
 
 		$book_img = array_pop($images_list);
@@ -146,7 +150,8 @@ if(strpos($fullUrl, 'email=sent') == true){
 
 		echo '<div  class = book_information>';
 
-		echo '<i>	First Name: ' . $value[0]['firstName'] . '<br>';
+		echo '<i> Title: ' . $key . '<br>';
+		echo '	First Name: ' . $value[0]['firstName'] . '<br>';
 		echo 'Last Name: ' . $value[0]['lastName'] . '<br>';
 		echo 'Publisher: ' . $value[0]['publisher'] . '<br>';
 		echo 'Year: ' . $value[0]['year'] . '<br>';
@@ -159,17 +164,15 @@ if(strpos($fullUrl, 'email=sent') == true){
 
 		$counter +=  1;
 
-
 	}
 
-
-
+	//Saves book title for when we email them to client
+	$_SESSION['email_list'] = $email_book_list;	
 
 
 	?>
 
-
-
+	
 
 	</div>
 
@@ -218,55 +221,6 @@ if(strpos($fullUrl, 'email=sent') == true){
 
 
 
-<div class="book_index">
-	
-<?php
-
-	$file = file_get_contents('valid_books.json');
-	$json_file = json_decode($file,true);
-
-	$bookCounter = 1;
-
-	$bookList = array();
-
-
-	foreach ($json_file as $key => $value) {
-
-		array_push($bookList, $key);
-
-		echo '<b>' . $bookCounter . ')' . $key . '</b>' . '<br>';
-		  
-		echo '<i>	First Name: ' . $value[0]['firstName'] . '<br>';
-		echo 'Last Name: ' . $value[0]['lastName'] . '<br>';
-		echo 'Publisher: ' . $value[0]['publisher'] . '<br>';
-		echo 'Year: ' . $value[0]['year'] . '<br>';
-		echo 'Pages: ' . $value[0]['pages'] . '<br> </i>';
-		echo "<hr> <br>";
-
-		$bookCounter += 1;
-		
-
-
-	}
-
-
-	$_SESSION['list'] = $bookList;
-
-
-
-
-?>
-
-
-</div>
-
-	
-
-
-
-
-
-
 
 
 <!-- Footer so client can send an email of the results to themeselves -->
@@ -287,9 +241,14 @@ if(strpos($fullUrl, 'email=sent') == true){
 
 	 if(strpos($fullUrl, 'email=empty') == true){
 	 	echo "<p  class = 'error'> **Error!	Email is empty! ** </p>";
-	 }else{
+	 }else if (strpos($fullUrl, 'email=send_error') == true){
 
-	 }
+	echo "<p  class = 'error'> **Error!	Email cant be sent. Does email exist? ** </p>";
+	
+	}else{
+
+	}
+
 
 
 	 ?>

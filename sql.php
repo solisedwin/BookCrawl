@@ -50,7 +50,6 @@ function createTable($genre){
  	Image varchar(150) NULL	
  	);';
  	
-
  	$output = $this->query($query);
 
  	echo "<br>";
@@ -95,14 +94,10 @@ function tableCheck(){
 		$this->createTable($client_genre);
 	}
 
-
 	return $client_genre;
 
 }
 
-function currentData(){
-	echo 'Here is where we check back on our old data to seee if we get some matches';
-}
 
 
 
@@ -114,18 +109,6 @@ function dataAmount($genre){
 	$num_of_rows =  $rows['total'];
 	echo ' ' . $num_of_rows . ' ';
 
-	$_SESSION['scrap'] = 'Y';
-
-	/*
-	//We check SQL table for info
-	if($num_of_rows > 140){
-		currentData();
-	}
-	//We need to scrap more data 
-	else{
-		$_SESSION['scrap'] = 'Y';
-	}
-	*/
 
 }
 
@@ -134,9 +117,9 @@ function dataAmount($genre){
 //End of SQL class 
 }
 
-$sql_obj = new SQL('localhost','root','fakepasswordgithubexample','BookCrawler');
+$sql_obj = new SQL('localhost','root','fakepassword','BookCrawler');
 $genre = $sql_obj->tableCheck();
-$sql_obj->dataAmount($genre);
+#$sql_obj->dataAmount($genre);
 
 
 
