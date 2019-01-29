@@ -116,7 +116,5 @@ $genre = $sql_obj->tableCheck();
 
 
 
-
-
 ?>
 

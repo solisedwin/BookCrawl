@@ -81,8 +81,8 @@ session_start();
 
 
 					<p><strong>Year Range of Book</strong></p>
-					<p>From Year</p><input type="number" name="startYr" required="required">
-					<p>To Year</p><input type="number" name="endYr" required="required"> 
+					<p>From Year</p><input type="number" name="startYr" required="required"	min="1750">
+					<p>To Year</p><input type="number" name="endYr" required="required"	 min="1750"> 
 
 <!-- Check URL if header function is invoked. We go to
 	data.html and check URL to see/display specific error --> 
@@ -107,6 +107,7 @@ session_start();
 	}	
 	else{
 		
+		
 	}
 
 	?>
@@ -119,7 +120,7 @@ session_start();
 <span>
 	<p><strong>Max Book Page Length</strong></p>	
 
-	<input type="number" name="pages" required="required">
+	<input type="number" name="pages" required="required" min="100">
 </span> <br> 
 
 <!-- Specific Book Publisher -->
