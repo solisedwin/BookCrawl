@@ -1,0 +1,19 @@
+Status: 301 Moved Permanently
+X-Request-Id: 4CNNTH62PHCCMSGGE3DM
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Content-Type-Options: nosniff
+Content-Encoding: gzip
+Set-Cookie: lobpc=1; path=/; expires=Sat, 27 Jan 2029 03:41:08 -0000
+Set-Cookie: csid=BAhJIhgzMjYtNDcwMDMxNC00MzI4NTMzBjoGRVQ%3D--392537849859ba2e1d83c714e8251f83f61f5fcf; path=/; expires=Thu, 27 Jan 2039 03:41:08 -0000
+Set-Cookie: locale=en; path=/
+Set-Cookie: _session_id2=78ec997cb22d85e44564d1f8c9654129; path=/; expires=Sun, 27 Jan 2019 09:41:08 -0000; HttpOnly
+Vary: User-Agent,Accept-Encoding
+Server: Server
+X-Amz-Rid: 4CNNTH62PHCCMSGGE3DM
+X-Runtime: 0.051044
+Location: https://www.goodreads.com/genres/childrens?original_shelf=children
+Cache-Control: no-cache
+Date: Sun, 27 Jan 2019 03:41:08 GMT
+X-Frame-Options: SAMEORIGIN
+Content-Type: text/html; charset=utf-8

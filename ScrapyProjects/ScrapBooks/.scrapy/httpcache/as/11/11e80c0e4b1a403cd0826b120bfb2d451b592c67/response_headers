@@ -1,0 +1,8 @@
+Expect-Ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+X-Powered-By: Servlet/2.5 JSP/2.1
+Set-Cookie: vid=1e399ad5-0f47-4388-9bcf-b0b74741cb6b; domain=.alibris.com; expires=Wednesday, 20-Jan-2049 03:19:58 GMT; path=/
+Content-Encoding: gzip
+Server: cloudflare
+Date: Mon, 28 Jan 2019 03:19:59 GMT
+Cf-Ray: 4a0052122ef8c5e2-EWR
+Content-Type: text/html; charset=ISO-8859-1

@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 
 
-conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakepasswordforgithub", db="BookCrawler");
+conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakepasswordgithub", db="BookCrawler");
 # you must create a Cursor object. It will let you execute all the queries you need  
 cur = conn.cursor();
 
@@ -289,17 +289,17 @@ def sql_extract(genre, query):
 
     try:
         #50 is our limit for amount of books we show. EVEN IF we have few valid books based on author's name
-        for i in range(50):
+        for i in range(35):
             #returns only book title for row index i. Column 6
             title = str(data[i][6]).strip();
             title = title.replace(' ','-');
         
 
-            sql_firstName = data[0][1];
-            sql_lastName = data[0][2];
-            sql_year = data[0][3];
-            sql_pages = data[0][4];
-            sql_publisher = data[0][5];
+            sql_firstName = data[i][1];
+            sql_lastName = data[i][2];  
+            sql_year = data[i][3];
+            sql_pages = data[i][4];
+            sql_publisher = data[i][5];
 
             image_src = searchImg(title, sql_lastName); 
             valid_books_json(title, sql_firstName, sql_lastName, sql_year, sql_publisher, sql_pages, image_src);

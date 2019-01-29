@@ -1,0 +1,19 @@
+Status: 301 Moved Permanently
+X-Request-Id: RBW1QNZDFE4SZ31F3XAR
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Content-Type-Options: nosniff
+Content-Encoding: gzip
+Set-Cookie: lobpc=1; path=/; expires=Sun, 28 Jan 2029 21:36:49 -0000
+Set-Cookie: csid=BAhJIhgwMjgtMjAzODEyOS02NTkyMjc2BjoGRVQ%3D--f8b882a6cd5510c19a0ba55f1809a6c1b9069f7c; path=/; expires=Fri, 28 Jan 2039 21:36:49 -0000
+Set-Cookie: locale=en; path=/
+Set-Cookie: _session_id2=170ed2d8108dcbc0da058d52ddd0952d; path=/; expires=Tue, 29 Jan 2019 03:36:49 -0000; HttpOnly
+Vary: User-Agent,Accept-Encoding
+Server: Server
+X-Amz-Rid: RBW1QNZDFE4SZ31F3XAR
+X-Runtime: 0.049531
+Location: https://www.goodreads.com/genres/mathematics?original_shelf=math
+Cache-Control: no-cache
+Date: Mon, 28 Jan 2019 21:36:49 GMT
+X-Frame-Options: SAMEORIGIN
+Content-Type: text/html; charset=utf-8

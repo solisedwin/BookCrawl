@@ -39,6 +39,10 @@ function query($query){
 
 function createTable($genre){
 
+	#Science-Fiction => ScienceFiction
+	$genre = str_replace('-', '', $genre);
+
+
 	$query = 'CREATE TABLE ' . $genre . '(
 	ID int PRIMARY KEY AUTO_INCREMENT NOT NULL, 
 	FirstName varchar(20) NULL,
@@ -101,25 +105,13 @@ function tableCheck(){
 
 
 
-function dataAmount($genre){
-	$query = 'SELECT COUNT(*) total FROM ' . $genre;
-
-	$output = $this->query($query);
-	$rows = $output->fetch_assoc();
-	$num_of_rows =  $rows['total'];
-	echo ' ' . $num_of_rows . ' ';
-
-
-}
-
-
-
 //End of SQL class 
 }
 
-$sql_obj = new SQL('localhost','root','fakepassword','BookCrawler');
+
+$sql_obj = new SQL('localhost','root','fakepasswordforgit','BookCrawler');
 $genre = $sql_obj->tableCheck();
-#$sql_obj->dataAmount($genre);
+
 
 
 

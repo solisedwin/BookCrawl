@@ -56,6 +56,9 @@ session_start();
 			<!-- Genre options -->
 	<form action="data.php" method="GET">
 
+				<center>
+
+
 				<span class="genreSpan">
 					<p><b>Genre  </b> </p>					
 					<select id="genres" name="genre_choice"></select>
@@ -140,15 +143,17 @@ session_start();
 
 </div>
 
+</center>
 
 
-<div class="info">
+
+	<div class="info">
 	
 
-<p> Process might take some time to load. Usually takes 6-10 mintues. <br> 
-Please wait while website collects data. <br>
-<b> * Note ! The more info you provide, the more quicker will the program run * </b> 
-</p>
+		<p> Process might take some time to load. Usually takes 6-10 mintues. <br> 
+		Please wait while website collects data. <br>
+		<b> * Note ! The more info you provide, the more quicker will the program run * </b> 
+		</p>
 
 
 
@@ -239,7 +244,6 @@ function genreMaker() {
 		'History',
 		'Math',
 		'Poetry',
-		'Art',
 		'Cookbooks',
 		'Biographies',
 		'Autobiographies',

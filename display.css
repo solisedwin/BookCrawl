@@ -45,15 +45,12 @@ margin-top: 5px;
 height: 245px; 
 width: 165px;
 
+pointer-events: auto;
 
 }
 
 
-.bookCover img: hover {
-cursor: pointer;
 
-
-}
 
 
 
@@ -164,8 +161,8 @@ cursor: pointer;
 
 margin-left: 20px;
 background-color: #ceceb9;
-height: 170px;
-width: 175px;
+height: 200px;
+width: 180px;
 border-style: solid;
 border-color: black;
 position: relative;

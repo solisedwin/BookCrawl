@@ -1,13 +1,13 @@
 	<?php
 
-	/*
-	Things To Fix:
-
-	- Then feel free to leave the specfic input empty.(If user doesnt care about specfics) 
-	- Cant input negative numbers 
-	*/
-
+	
 	session_start();
+
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');	
+
+
+
 
 	ignore_user_abort(false);
 
@@ -33,20 +33,10 @@
 	#main function that runs all the computations
 	function main(){
 		
-			
-		//deletes valid_books.json for new session
-		if(file_exists('/var/www/html/BookCrawl/valid_books.json')){
-			unlink('/var/www/html/BookCrawl/valid_books.json');
-		}
-
-
-
 		yearOver();
 		createJson();
 		sql();
-
 		runLinux();	
-		
 	
 	}
 
@@ -71,30 +61,39 @@
 			header("Location: setup.php?yearRange=endYr");
 			die();	
 		}
-		
 
 		else{
-			
 			print_r($_SESSION);
-
 		}
+	
 	}
+
+
+
+	
 
 	//Saves clients book preference data in a json format
 	function createJson(){
 
-		if(file_exists('/var/www/html/BookCrawl/client_data.json')){
-			unlink('/var/www/html/BookCrawl/client_data.json');
+		
+		if(file_exists('valid_books.json')){
+			unlink('valid_books.json');
 		}
 
 
+		#science-fiction => scienceFiction
+		$_SESSION['genre'] = str_replace('-', '', $_SESSION['genre']);
 
 
 		$data = array("genre"=> $_SESSION['genre'],"firstName"=>$_SESSION['firstName'], "lastName"=>$_SESSION['lastName'],"publisher"=>$_SESSION['publisher'], "startYr"=>$_SESSION['startYr'], "endYr"=>$_SESSION['endYr'], "pages"=> $_SESSION['pages']);
 		
+		echo '<br>';
+		
 		$jsonContent = json_encode($data);	
+
 		
 		file_put_contents("/var/www/html/BookCrawl/client_data.json", $jsonContent);
+
 	}
 
 
@@ -133,17 +132,16 @@
 	#filter all the books that correspond with user pereference
 	$query_path = "/var/www/html/BookCrawl/ScrapyProjects/ScrapBooks/ScrapBooks/";
 	chdir($query_path);
-	$query_output = shell_exec("python filter.py 2>&1");
+	$filter_output = shell_exec("python filter.py 2>&1");
 	
 
 
 	//Change location to display.php
-	$display_path = "/var/www/html/BookCrawl";	
+	$display_path = "/var/www/html/BookCrawl/";	
 	chdir($display_path);
 	header("location: display.php?stat=done");
-	
 
-	//Linux commands are done. We now load display.php
+	
 	exit();
 
 	}

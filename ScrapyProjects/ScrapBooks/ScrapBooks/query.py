@@ -36,7 +36,6 @@ from amazon import AmazonSpider
 
 
 
-
 #If we found a match from our first method, where we already have the last name from the SQL database.
 match_found = False;
 
@@ -44,7 +43,7 @@ match_found = False;
 
 
 #set up MySQL database 
-conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakepasswordforgithub", db="BookCrawler");
+conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakepasswordforgit", db="BookCrawler");
 # you must create a Cursor object. It will let you execute all the queries you need  
 cur = conn.cursor();
 
@@ -98,7 +97,7 @@ def incomplete_books(genre):
     data = list(data);
 
     try:
-        for i in range(50):
+        for i in range(35):
             #returns only book title for row index i. Column 6
             title = str(data[i][6]).strip();
             title = title.replace(' ','-');

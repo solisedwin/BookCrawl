@@ -125,8 +125,11 @@ if(strpos($fullUrl, 'email=sent') == true){
 	foreach ($json_file as $key => $value) {
 
 
+		$amazon_title_dash = $key;
+
 		$key = str_replace('-', ' ', $key);
 		array_push($email_book_list, $key);
+
 
 
 		$book_img = array_pop($images_list);
@@ -139,8 +142,8 @@ if(strpos($fullUrl, 'email=sent') == true){
 
 		<b>	$counter .) </b>
 
-		<img src = $book_img alt = 'Book Cover' onclick= window.open('https://www.amazon.com/s/ref=nb_sb_ss_c_1_4?url=search-alias%3Daps&field-keywords=$key+novel')	
-		onmouseover = style = 'cursor: pointer;'  class = 'bookCover'>
+		<img src = $book_img alt = 'Book Cover' onclick= window.open('https://www.amazon.com/s/ref=nb_sb_ss_c_1_4?url=search-alias%3Daps&field-keywords=$amazon_title_dash+novel')	
+		 class = 'bookCover'>
 
 		";
 
@@ -172,7 +175,6 @@ if(strpos($fullUrl, 'email=sent') == true){
 
 	?>
 
-	
 
 	</div>
 
@@ -201,9 +203,18 @@ if(strpos($fullUrl, 'email=sent') == true){
 
 		if(empty($value)){
 			$value2 = 'N/A';
-		}else{
+		}
+
+		else if (strpos($value, 'eFiction') == true){
+
+
+				$value2 = 'Science Fiction';
+		}
+
+		else{
 			$value2 = $value;
 		}
+		
 
 		echo $key . ': ' . $value2 . '<br>';
 		

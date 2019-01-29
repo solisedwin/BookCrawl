@@ -23,8 +23,10 @@ class AlibrisspiderSpider(scrapy.Spider):
 
 
 
+
+
     #set up MySQL database 
-    conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakeasspassword", db="BookCrawler");
+    conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakepasswordforgit", db="BookCrawler");
     # you must create a Cursor object. It will let you execute all the queries you need  
     cur = conn.cursor();
 
@@ -149,13 +151,23 @@ class AlibrisspiderSpider(scrapy.Spider):
         start_urls = [];
 
         
+        webpage_genre = '';
+
+        if 'eFic' in self.genre:
+            webpage_genre = 'Science+Fiction';
+        else:
+            webpage_genre = self.genre;
+
+
+
+
         for i in range(1,19):
-            a_url = 'https://www.alibris.com/search/books/subject/' + self.genre + '?qsort=&page=' + str(i);
+            a_url = 'https://www.alibris.com/search/books/subject/' + webpage_genre + '?qsort=&page=' + str(i);
             start_urls.append(a_url);
         
 
-        start_urls.append('https://www.fictiondb.com/search/searchresults.htm?srchtxt=' + self.genre + '&styp=5');    
-        start_urls.append('https://www.goodreads.com/genres/' + self.genre);   
+        start_urls.append('https://www.fictiondb.com/search/searchresults.htm?srchtxt=' + webpage_genre + '&styp=5');    
+        start_urls.append('https://www.goodreads.com/genres/' + webpage_genre);   
     
 
         for url in start_urls:
