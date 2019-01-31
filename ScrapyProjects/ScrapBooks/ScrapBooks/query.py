@@ -43,7 +43,7 @@ match_found = False;
 
 
 #set up MySQL database 
-conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakepasswordforgit", db="BookCrawler");
+conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakepassword", db="BookCrawler");
 # you must create a Cursor object. It will let you execute all the queries you need  
 cur = conn.cursor();
 
@@ -83,6 +83,15 @@ def getYears():
         return [startYear, endYear];
 
 
+
+
+
+def getPublisher():
+    with open('/var/www/html/BookCrawl/client_data.json') as f:
+        data = json.load(f);
+        publisher = data['publisher'].strip();
+        publisher = publisher.replace('+', ' ');
+        return publisher;
 
 
 
@@ -258,7 +267,7 @@ def delete_book(title, genre):
     try:
 
         cur.execute("DELETE FROM %s WHERE Book = '%s'" % (genre, title)); 
-        conn.commit();
+        conn.commit();      
         print 'DELETED book: ' + title; 
     except Exception as e:
         print '~~ delete_book Exception: ' + str(e);
@@ -411,7 +420,7 @@ def googleScrap(title):
             elif 'Pages:' in ans.text:
                 fullInfo = ans.next_sibling.strip();
                 pageCount = fullInfo[0:fullInfo.index(" ")]   
-                print "$$$$ Pages: " + pageCount
+                print "$$$$ Pages: " + pageCount    
                 pages_bool = True
                 continue;
                 
@@ -432,19 +441,26 @@ def googleScrap(title):
                 pass
 
 
+        #check for publisher
 
+        client_publisher = getPublisher();
 
-        is_valid =  pages_date_filter(date, pageCount);
-
-
-        if is_valid:
-            title.replace('+', ' ');
-            client_firstName = getFirstName();
+        if client_publisher and publisher and (client_publisher.lower() == publisher.lower()):
+            print 'Same publisher has been found';
             swapData(title, date, firstName, lastName, pageCount, publisher);
         else:
-            title.replace('+', ' ');
-            genre = getGenre();
-            delete_book(title, genre);
+
+            is_valid =  pages_date_filter(date, pageCount);
+
+
+            if is_valid:
+                title.replace('+', ' ');
+                client_firstName = getFirstName();
+                swapData(title, date, firstName, lastName, pageCount, publisher);
+            else:
+                title.replace('+', ' ');
+                genre = getGenre();
+                delete_book(title, genre);
 
 
 

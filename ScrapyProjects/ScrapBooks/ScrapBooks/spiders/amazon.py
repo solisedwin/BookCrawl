@@ -33,7 +33,7 @@ class AmazonSpider(scrapy.Spider):
 
   
   #set up MySQL database 
-  conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakepasswordforgit", db="BookCrawler");
+  conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakepassword ", db="BookCrawler");
   # you must create a Cursor object. It will let you execute all the queries you need  
   cur = conn.cursor();
 
@@ -78,6 +78,7 @@ class AmazonSpider(scrapy.Spider):
     with open('/var/www/html/BookCrawl/client_data.json') as f:
         data = json.load(f);
         publisher = data['publisher'].strip();
+        publisher = publisher.replace('+', ' ');
         return publisher;    
 
 

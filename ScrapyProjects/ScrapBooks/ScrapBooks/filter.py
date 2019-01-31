@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 
 
-conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakepasswordgithub", db="BookCrawler");
+conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakepassword", db="BookCrawler");
 # you must create a Cursor object. It will let you execute all the queries you need  
 cur = conn.cursor();
 
@@ -53,6 +53,7 @@ def getPublisher():
     with open('/var/www/html/BookCrawl/client_data.json') as f:
         data = json.load(f);
         publisher = data['publisher'].strip();
+        publisher = publisher.replace('+', ' ');
         return publisher;
 
 
@@ -60,6 +61,7 @@ def getPublisher():
 
 
 
+        
 
 def valid_books_json(title, firstName, lastName, year, publisher, pages, src):
     print 'Inside valid_books.json'
@@ -281,15 +283,25 @@ def empty_table(genre):
 
 
 
-def sql_extract(genre, query):
+def sql_extract(higher_range_bool,genre, query):
     cur.execute("SELECT * FROM %s WHERE BOOK IS NOT NULL %s" % (genre, query)); 
     data = cur.fetchall();
 
     data = list(data);
 
+    max = 0;
+
+    if higher_range_bool:
+        max = len(data);
+    else:
+        max = 35;
+
+
+
+
     try:
         #50 is our limit for amount of books we show. EVEN IF we have few valid books based on author's name
-        for i in range(35):
+        for i in range(max):
             #returns only book title for row index i. Column 6
             title = str(data[i][6]).strip();
             title = title.replace(' ','-');
@@ -322,16 +334,17 @@ def main():
     firstName = getFirstName();
     lastName = getLastName();
 
+    #client didnt provide us with any names
     if not firstName and not lastName:
         query = 'AND StartYear IS NOT NULL';
+        sql_extract(False,genre , query);
 
-        sql_extract(genre , query);
     elif firstName:
         query = " AND FirstName = '%s'" % (firstName);
-        sql_extract(genre, query);
+        sql_extract(True, genre, query);
     elif lastName:
         query = " AND LastName = '%s'" % (lastName);
-        sql_extract(genre, query);
+        sql_extract(True,genre, query);
     else:
         pass;
 

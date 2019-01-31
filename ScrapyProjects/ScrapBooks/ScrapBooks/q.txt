@@ -1,0 +1,113 @@
+
+
+Information for book: Drama-in-the-Church
+Google Search Url: https://www.google.com/search?client=ubuntu&channel=fs&ei=EG4cW6Jii5zmAoHiqqgK&q=Drama-in-the-Church+novel
+DELETED book: Drama-in-the-Church
+
+
+Information for book: Confessions-of-a-Teenage-Drama-Queen
+Google Search Url: https://www.google.com/search?client=ubuntu&channel=fs&ei=EG4cW6Jii5zmAoHiqqgK&q=Confessions-of-a-Teenage-Drama-Queen+novel
+~~~ Google Scrap Exception: 'NoneType' object has no attribute 'text' ~~~
+
+
+Information for book: More-Drama-in-the-Church
+Google Search Url: https://www.google.com/search?client=ubuntu&channel=fs&ei=EG4cW6Jii5zmAoHiqqgK&q=More-Drama-in-the-Church+novel
+Date: 2005
+firstName from Author: Dynah
+lastName from Author:  Zale
+ || Title: More Drama in the Church
+StartYear has been updated
+FirstName has been updated
+LastName has been updated
+
+
+Information for book: Drama
+Google Search Url: https://www.google.com/search?client=ubuntu&channel=fs&ei=EG4cW6Jii5zmAoHiqqgK&q=Drama+novel
+~~~ Google Scrap Exception: 'NoneType' object has no attribute 'text' ~~~
+
+
+Information for book: Drama-2
+Google Search Url: https://www.google.com/search?client=ubuntu&channel=fs&ei=EG4cW6Jii5zmAoHiqqgK&q=Drama-2+novel
+DELETED book: Drama-2
+
+
+Information for book: You-Ain't-the-One
+Google Search Url: https://www.google.com/search?client=ubuntu&channel=fs&ei=EG4cW6Jii5zmAoHiqqgK&q=You-Ain't-the-One+novel
+~~~ Google Scrap Exception: 'NoneType' object has no attribute 'text' ~~~
+
+
+Information for book: You-Aint-The-One
+Google Search Url: https://www.google.com/search?client=ubuntu&channel=fs&ei=EG4cW6Jii5zmAoHiqqgK&q=You-Aint-The-One+novel
+~~~ Google Scrap Exception: 'NoneType' object has no attribute 'text' ~~~
+
+
+Information for book: Swingingsubmission
+Google Search Url: https://www.google.com/search?client=ubuntu&channel=fs&ei=EG4cW6Jii5zmAoHiqqgK&q=Swingingsubmission+novel
+DELETED book: Swingingsubmission
+
+
+Information for book: Swinging-Submission
+Google Search Url: https://www.google.com/search?client=ubuntu&channel=fs&ei=EG4cW6Jii5zmAoHiqqgK&q=Swinging-Submission+novel
+DELETED book: Swinging-Submission
+
+
+Information for book: Jayd's-Legacy
+Google Search Url: https://www.google.com/search?client=ubuntu&channel=fs&ei=EG4cW6Jii5zmAoHiqqgK&q=Jayd's-Legacy+novel
+Date: 2007
+firstName from Author: L.
+lastName from Author:  Divine
+ || Title: Jayd's Legacy
+## swapData Exception: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's Legacy'' at line 1") ##
+
+
+Information for book: The-Fall-Musical
+Google Search Url: https://www.google.com/search?client=ubuntu&channel=fs&ei=EG4cW6Jii5zmAoHiqqgK&q=The-Fall-Musical+novel
+DELETED book: The-Fall-Musical
+
+
+Information for book: Lady-J
+Google Search Url: https://www.google.com/search?client=ubuntu&channel=fs&ei=EG4cW6Jii5zmAoHiqqgK&q=Lady-J+novel
+DELETED book: Lady-J
+
+
+Information for book: Courtin'-Jayd
+Google Search Url: https://www.google.com/search?client=ubuntu&channel=fs&ei=EG4cW6Jii5zmAoHiqqgK&q=Courtin'-Jayd+novel
+~~ delete_book Exception: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1")
+
+
+Information for book: So,-So-Hood
+Google Search Url: https://www.google.com/search?client=ubuntu&channel=fs&ei=EG4cW6Jii5zmAoHiqqgK&q=So,-So-Hood+novel
+~~~ Google Scrap Exception: 'NoneType' object has no attribute 'text' ~~~
+
+
+Information for book: The-Big-Production
+Google Search Url: https://www.google.com/search?client=ubuntu&channel=fs&ei=EG4cW6Jii5zmAoHiqqgK&q=The-Big-Production+novel
+DELETED book: The-Big-Production
+
+
+Information for book: Too-Hot!
+Google Search Url: https://www.google.com/search?client=ubuntu&channel=fs&ei=EG4cW6Jii5zmAoHiqqgK&q=Too-Hot!+novel
+DELETED book: Too-Hot!
+
+
+Information for book: Frenemies
+Google Search Url: https://www.google.com/search?client=ubuntu&channel=fs&ei=EG4cW6Jii5zmAoHiqqgK&q=Frenemies+novel
+DELETED book: Frenemies
+
+
+Information for book: Show,-Don't-Tell
+Google Search Url: https://www.google.com/search?client=ubuntu&channel=fs&ei=EG4cW6Jii5zmAoHiqqgK&q=Show,-Don't-Tell+novel
+~~ delete_book Exception: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 't-Tell'' at line 1")
+
+
+Information for book: Hustlin'
+Google Search Url: https://www.google.com/search?client=ubuntu&channel=fs&ei=EG4cW6Jii5zmAoHiqqgK&q=Hustlin'+novel
+Date: 2009
+firstName from Author: L.
+lastName from Author:  Divine
+ || Title: Hustlin'
+## swapData Exception: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''Hustlin''' at line 1") ##
+
+
+Information for book: Drama-Queers!
+Google Search Url: https://www.google.com/search?client=ubuntu&channel=fs&ei=EG4cW6Jii5zmAoHiqqgK&q=Drama-Queers!+novel

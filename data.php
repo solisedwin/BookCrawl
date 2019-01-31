@@ -26,7 +26,7 @@ ini_set('display_errors', 'On');
 	//Ints
 	$_SESSION['startYr'] = $_GET['startYr'];
 	$_SESSION['endYr'] = $_GET['endYr'];
-
+	
 
 
 
@@ -82,7 +82,20 @@ ini_set('display_errors', 'On');
 
 
 		#science-fiction => scienceFiction
+
 		$_SESSION['genre'] = str_replace('-', '', $_SESSION['genre']);
+		
+
+		#Penguin Books Publisher => Penguin+Books+Publisher
+		if(empty($_SESSION['publisher']) == false){
+
+		$_SESSION['publisher'] = str_replace(' ', '+', $_SESSION['publisher']);
+			
+		}else{
+			$_SESSION['publisher'] = '';
+		}
+
+
 
 
 		$data = array("genre"=> $_SESSION['genre'],"firstName"=>$_SESSION['firstName'], "lastName"=>$_SESSION['lastName'],"publisher"=>$_SESSION['publisher'], "startYr"=>$_SESSION['startYr'], "endYr"=>$_SESSION['endYr'], "pages"=> $_SESSION['pages']);

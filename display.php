@@ -29,7 +29,6 @@ if(strpos($fullUrl, 'email=sent') == true){
 	echo '</script>';
 }
 
-
 ?>
 
 
@@ -49,14 +48,16 @@ if(strpos($fullUrl, 'email=sent') == true){
 	<?php
 
 	$file = file_get_contents('valid_books.json');
-	$contents = json_decode($file);
+	$client_data = json_decode($file,true);
 
 	$counter = 0;
 
+	
 
-	foreach ($contents as $key) {
+
+	foreach ($client_data as $key) {
 		$counter += 1 ;
-	 }
+	 }	
 
 	echo  "<span id = counter_span>	<b>	<p> Books Found: " . $counter . "</p> </b> </span>";
 	
@@ -68,7 +69,7 @@ if(strpos($fullUrl, 'email=sent') == true){
 
 	
 </header>
-
+<a href=""></a>
 
 
 <!--- Display All Book Recommendations and their covers -->
@@ -89,6 +90,9 @@ if(strpos($fullUrl, 'email=sent') == true){
 	$file = file_get_contents('valid_books.json');
 	$book_choices = json_decode($file, true);
 
+
+
+
 	foreach ($book_choices as $key => $value) {
 
 	$img_src =  $value[0]['src'];
@@ -106,7 +110,23 @@ if(strpos($fullUrl, 'email=sent') == true){
 
 	array_push($images_list, $book_img);
 
-}
+	}
+
+
+
+	if(file_exists('valid_books.json') == false){
+
+
+		echo '<a   href = "setup.php" >		
+				<h3>	
+				Sorry ! No books were able to be found with your preference! Try a different search.	
+				</h3>	
+
+		</a>';
+
+		exit();
+
+	}
 
 
 
@@ -150,7 +170,6 @@ if(strpos($fullUrl, 'email=sent') == true){
 
 
 
-
 		echo '<div  class = book_information>';
 
 		echo '<i> Title: ' . $key . '<br>';
@@ -175,8 +194,24 @@ if(strpos($fullUrl, 'email=sent') == true){
 
 	?>
 
-
 	</div>
+
+
+
+
+
+<div class="client_info">
+	
+<h5> Its possible that we couldnt find pages or publisher information for some books online. Yet here are still some 
+good choices to choose from.  </h5>
+
+
+
+
+</div>
+
+
+
 
 
 
@@ -196,6 +231,7 @@ if(strpos($fullUrl, 'email=sent') == true){
 	$json_file = json_decode($file,true);
 
 
+
 	//Read client's data (pereference)
 	foreach ($json_file as $key => $value) {
 
@@ -207,9 +243,14 @@ if(strpos($fullUrl, 'email=sent') == true){
 
 		else if (strpos($value, 'eFiction') == true){
 
-
 				$value2 = 'Science Fiction';
+		}else if (strpos($value, '+') == true){  #publisher words are seprated by '+'
+
+		$publisher = str_replace('+', ' ', $value);
+		$value2 = $publisher;
+
 		}
+
 
 		else{
 			$value2 = $value;

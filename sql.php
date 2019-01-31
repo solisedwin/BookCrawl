@@ -109,7 +109,7 @@ function tableCheck(){
 }
 
 
-$sql_obj = new SQL('localhost','root','fakepasswordforgit','BookCrawler');
+$sql_obj = new SQL('localhost','root','fakepassword','BookCrawler');
 $genre = $sql_obj->tableCheck();
 
 

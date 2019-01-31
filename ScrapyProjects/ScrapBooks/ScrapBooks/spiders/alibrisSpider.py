@@ -26,7 +26,7 @@ class AlibrisspiderSpider(scrapy.Spider):
 
 
     #set up MySQL database 
-    conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakepasswordforgit", db="BookCrawler");
+    conn = MySQLdb.connect(host="127.0.0.1",user="root", passwd="fakepasswordforgithub", db="BookCrawler");
     # you must create a Cursor object. It will let you execute all the queries you need  
     cur = conn.cursor();
 
